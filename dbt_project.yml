@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'my_snowflake_dbt_project'
 version: '1.0.0'
 config-version: 2
 
@@ -24,6 +24,8 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
 
+on-run-end:
+  - "{{ grant_all_on_schemas(schemas, 'transformer') }}"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -32,7 +34,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  my_new_project:
+  my_snowflake_dbt_project:
       # Applies to all files under models/example/
-      example:
-          materialized: view
+      staging:
+          +materialized: view
+          schema: staging
+          query_tag: dbt_staging
+          snowflake_warehouse: compute_wh
+      marts:
+        core:
+          +materialized: table
+          query_tag: dbt_marts          
