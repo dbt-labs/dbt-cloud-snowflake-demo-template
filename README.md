@@ -10,12 +10,10 @@ workflow, modeling, and operationalizing.
 
 ### Using the demo project
 
-If on dbt Cloud IDE
-- Follow through the Userflow guided tour. 
+This project was built in the intention to be used with the dbt Cloud IDE. You can follow the UserFlow guided tour but 
+if you're unable to do this, here are the steps. 
 
-Here is a summary of the steps: 
-
-1. Read the entire Readme 
+1. Read the entire README
 2. Check out the dbt_project.yml file. There you will find where we have defined our materializations, query tags, warehouse sizes, and hooks.
 3. Read through the models/staging/tpch/tpch_sources.yml file for how we have defined our source data.
 4. Go to models/staging/tpch/stg_tpch_customers.sql. Read about how we write our models 
