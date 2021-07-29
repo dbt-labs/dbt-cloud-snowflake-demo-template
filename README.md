@@ -31,6 +31,9 @@ Here is a summary of the steps:
 13. Generate docs by running `dbt docs generate` and click on the `View Docs` on the left hand side. 
 14. Check out the docs site and click on the blue button on the botton to view the DAG. Right click on a node to refocus. Then right click again to view the docs.
 
+Be sure to take a look around the project outside of the flow. We have included other fun features for you to see, including:
+- How to change output based on environments 
+- How to dynmically pivot vs hardcoding your pivot
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
