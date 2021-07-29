@@ -1,3 +1,7 @@
+# This is a sources file. 
+# This is where we declare our raw sources and apply descriptions and tests (include source freshness tests)
+# Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/using-sources
+
 version: 2
 
 
@@ -17,7 +21,7 @@ sources:
         
         columns:
           - name: o_orderkey
-            description: SF*1,500,000 are sparsely populated
+            description: Primary key of the Orders table
             tests: 
               - unique
               - not_null
@@ -47,7 +51,7 @@ sources:
         description: main customer table
         columns:
           - name: c_custkey
-            description: unique customer key
+            description: Primary Key of the Customer table
             tests:
               - unique:
                   severity: warn
@@ -120,7 +124,7 @@ sources:
         description: nation mapping
         columns:
           - name: n_nationkey
-            description: 25 nations are populated
+            description: Primary Key of the Nation table
             tests:
               - unique:
                   severity: warn
@@ -141,7 +145,7 @@ sources:
         description: main part table
         columns:
           - name: p_partkey
-            description: SF*200,000 are populated
+            description: Primary Key of the Part table
             tests:
               - unique:
                   severity: warn
@@ -190,7 +194,7 @@ sources:
         description: region mapping
         columns:
           - name: r_regionkey
-            description: 5 regions are populated
+            description: Primary Key of the Region table. 5 regions are populated
             tests:
               - unique:
                   severity: warn
@@ -205,7 +209,7 @@ sources:
         description: main supplier table
         columns:
           - name: s_suppkey
-            description: SF*10,000 are populated
+            description: Primary Key of the Supplier table
             tests:
               - unique:
                   severity: warn

@@ -1,6 +1,9 @@
-Welcome to your new dbt project!
+Welcome to the dbt Labs Snowflake Demo Project! 
 
-### Using the starter project
+This project is intended to showcase key Snowflake + dbt functionalities in terms of 
+workflow, modeling, and operationalizing. 
+
+### Using the demo project
 
 Try running the following commands:
 - dbt run
