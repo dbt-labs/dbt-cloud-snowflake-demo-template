@@ -1,6 +1,9 @@
 # This is a sources file. 
 # This is where we declare our raw sources and apply descriptions and tests (include source freshness tests)
 # Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/using-sources
+# The source we are using for this project is the sample dataset that comes with every Snowflake account. 
+# You will need to have this in your account prior to using this dbt project.
+
 
 version: 2
 
@@ -8,7 +11,7 @@ version: 2
 sources:
   - name: tpch
     description: Welcome to the dbt Labs Snowflake demo project. We use the [TPCH dataset](https://docs.snowflake.com/en/user-guide/sample-data-tpch.html) to create a sample project to emulate what a production project might look like!
-    database: raw
+    database: snowflake_sample_data
     schema: tpch_sf001
     tables:
       - name: orders

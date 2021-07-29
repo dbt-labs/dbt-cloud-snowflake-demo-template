@@ -2,8 +2,8 @@ version: 2
 
 exposures:
   - name: yearly_part_rollup
-    description: |
-    This is to represent a sample dashaboard for this demo project.
+    description: | 
+      This is to represent a sample dashaboard for this demo project.
     
     # type could be {dashboard, notebook, analysis, ml, application}
     type: dashboard 
