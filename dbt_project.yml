@@ -39,13 +39,20 @@ on-run-end:
 # using the `{{ config(...) }}` macro.
 models:
   my_snowflake_dbt_project:
-      # Applies to all files under models/example/
       staging:
+          # Applies to all files under models/staging 
           +materialized: view
+          # This defaults every model in the staging directory to be materialized as a view in Snowflake
           schema: staging
+          # This configuration, paired with the generate_schema_name macro, builds every model in the staging directory into a schema named staging
           query_tag: dbt_staging
+          # This applies a query tag named `dbt_staging` to any related queries in Snowflake's Query_History
           snowflake_warehouse: compute_wh
+          # This specifies what snowflake warehouse should be used to execute models in staging. This overrides the default warehouse defined in the connection.
       marts:
         core:
+         # Applies to all files under models/marts/core
           +materialized: table
-          query_tag: dbt_marts          
+          # This defaults every model in the marts/core directory to be materialized as a table in Snowflake
+          query_tag: dbt_marts   
+          # This applies a query tag named `dbt_marts` to any related queries in Snowflake's Query_History       
