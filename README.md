@@ -31,7 +31,7 @@ if you're unable to do this, here are the steps.
 
 Be sure to take a look around the project outside of the flow. We have included other fun features for you to see, including:
 - How to change output based on environments 
-- How to dynmically pivot vs hardcoding your pivot
+- How to dynamically pivot vs hardcoding your pivot
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
