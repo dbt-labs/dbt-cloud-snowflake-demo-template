@@ -26,9 +26,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 # on-run-start and on-run-end are SQL statement(s) or macros that run at the end of 
 # dbt run/dbt/seed/dbt snapshot commands. 
-#Full documentation: https://docs.getdbt.com/reference/project-configs/on-run-start-on-run-end
+# Full documentation: https://docs.getdbt.com/reference/project-configs/on-run-start-on-run-end
 on-run-end:
   - "{{ grant_all_on_schemas(schemas, 'public') }}"
+
+# Configuring seeds 
+# Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/seeds
+seeds:
+# This declares that column names in the seed file will be quoted when the table is created.
+  +quote_columns: true
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
