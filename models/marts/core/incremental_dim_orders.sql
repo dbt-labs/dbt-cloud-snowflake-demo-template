@@ -1,3 +1,11 @@
+/* This model is an example of an incremental model. It defaults to the Snowflake merge behavior (https://docs.getdbt.com/reference/resource-configs/snowflake-configs#merge-behavior-incremental-models)
+when it is rebuilding only the latest roles.
+
+Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/building-models/configuring-incremental-models
+
+*/
+
+
 {{
     config(
         materialized = 'incremental',

@@ -1,3 +1,12 @@
+/* This model is an example of a non-transient Snowflake model. By default, dbt creates all objects in Snowflake as transient to 
+save on storage costs. Non-transient Snowflake objects store the history of the table which is unnecessary when your models 
+as idempotent (https://discourse.getdbt.com/t/understanding-idempotent-data-transformations/518)
+
+Full documentation: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#transient-tables
+
+*/
+
+
 {{
     config(
         materialized = 'table',

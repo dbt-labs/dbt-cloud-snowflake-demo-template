@@ -45,3 +45,6 @@ If you have time, take a look at other aspects of the project. We have included 
 - Join the [chat](http://slack.getdbt.com/) on Slack for live discussions and support
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
+## Help out:
+This is a open source project. If you want to contribute to this project/find any issues, [interact with us on the repository](https://github.com/dbt-labs/dbt-cloud-snowflake-demo-template)

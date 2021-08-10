@@ -1,4 +1,5 @@
 # the intent of this .md is to remove redundancy in the documentation
+# full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/documentation#using-docs-blocks
 
 # the below are descriptions from order_items
 {% docs base_price %} since extended_price is the line item total, we back out the price per item {% enddocs %}
