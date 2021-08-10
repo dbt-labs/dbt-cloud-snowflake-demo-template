@@ -59,7 +59,8 @@ from
 
 {% if is_incremental() %}
 
-  -- this filter will only be applied on an incremental run
+  -- this filter will only be applied on an incremental run. Incremental models can be used to only rebuild the defined latest rows without rebuilding the entire table. 
+  -- full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/building-models/configuring-incremental-models#understanding-the-is_incremental-macro
 
 or  order_date = '1992-02-02'
 

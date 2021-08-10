@@ -1,7 +1,7 @@
 # This is a sources file. 
 # This is where we declare our raw sources and apply descriptions and tests (include source freshness tests)
 # Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/using-sources
-# The source we are using for this project is the sample dataset that comes with every Snowflake account. 
+# The source we are using for this project is the sample tpch dataset that comes with every Snowflake account. 
 # You will need to have this in your account prior to using this dbt project.
 
 
@@ -17,7 +17,7 @@ sources:
       - name: orders
         description: main order tracking table
         freshness: 
-          # make this a warning as this is static data
+          # This section applies freshness tests on these column. Full docs: https://docs.getdbt.com/docs/dbt-cloud/using-dbt-cloud/cloud-snapshotting-source-freshness
           warn_after: {count: 6, period: hour}
           # error_after: {count: 12, period: hour}
         loaded_at_field: o_orderdate::timestamp
@@ -26,6 +26,7 @@ sources:
           - name: o_orderkey
             description: Primary key of the Orders table
             tests: 
+              # this applies the tests unique and not_null to the o_orderkey colum 
               - unique
               - not_null
                   

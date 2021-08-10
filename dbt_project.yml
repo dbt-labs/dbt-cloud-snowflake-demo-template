@@ -11,7 +11,7 @@ profile: 'snowflake_demo_project'
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
-# found in the "models/" directory. You probably won't need to change these!
+# found in the "models/" directory. You don't need to change these for this project.
 source-paths: ["models"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
@@ -33,13 +33,13 @@ on-run-end:
 # Configuring seeds 
 # Full documentation: https://docs.getdbt.com/docs/building-a-dbt-project/seeds
 seeds:
-# This declares that column names in the seed file will be quoted when the table is created.
-  +quote_columns: true
+# This declares that column names in the seed file will not be quoted when the table is created.
+  +quote_columns: false
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
-# In this example config, we tell dbt how to build the models, where to build them, which warehouse 
+# In this config, we tell dbt how to build the models, where to build them, which warehouse 
 # to use, and what query tag to provide on the snowflake site. 
 # These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro. 
@@ -51,14 +51,17 @@ models:
           +materialized: view
           # This defaults every model in the staging directory to be materialized as a view in Snowflake. To learn more about materializations: https://docs.getdbt.com/docs/building-a-dbt-project/building-models/materializations
           schema: staging
-          # This configuration, paired with the generate_schema_name macro, builds every model in the staging directory into a schema named staging
+          # This configuration builds every model in the staging directory into a schema named staging_<target_schema>
           # learn more about custom schemas: https://docs.getdbt.com/docs/building-a-dbt-project/building-models/using-custom-schemas
           query_tag: dbt_staging
           # This applies a query tag named `dbt_staging` to any related queries in Snowflake's Query_History
           # learn more about query tags: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#query-tags
           snowflake_warehouse: compute_wh
-          # This specifies what snowflake warehouse should be used to execute models in staging. This overrides the default warehouse defined in the connection.
+          # This specifies which Snowflake warehouse should be used to execute models in staging by overriding the default warehouse defined in the connection.
           # learn more about configuring warehouses: https://docs.getdbt.com/reference/resource-configs/snowflake-configs#configuring-virtual-warehouses
+          tags: "daily"
+          # You can apply tags to models, snapshots, seeds. This allows you to run based on the tag such as `dbt run --model tag:daily` which would let you run all the models tagged "daily"
+          # learn more about tags: https://docs.getdbt.com/reference/resource-configs/tags#definition
       marts:
         core:
          # Applies to all files under models/marts/core
