@@ -1,3 +1,10 @@
+# This is an example of a exposures yml file.
+# Exposures make it possible to define and describe a downstream use of your dbt project, such as in a dashboard, application, or data science pipeline.
+# You can declare dependencies and run based on an exposure's dependencies. 
+# Full Documentation: https://docs.getdbt.com/docs/building-a-dbt-project/exposures
+
+
+
 version: 2
 
 exposures:

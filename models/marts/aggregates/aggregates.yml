@@ -1,3 +1,7 @@
+# This is a yml file in which we provide descriptions for both models and columns.
+# Full documentation: https://docs.getdbt.com/reference/declaring-properties
+
+
 version: 2
 
 models:
