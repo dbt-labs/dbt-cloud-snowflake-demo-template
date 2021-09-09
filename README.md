@@ -7,9 +7,9 @@ workflow, modeling, and operationalizing.
 In order to successfully run this project, you will need the following: 
 
 - A Snowflake account
-- Snowflake Partner Connect dbt Cloud account
+- Snowflake trial dbt Cloud account
 - Snowflake Sample Data [The TPC-H dataset that is standard with every account](https://docs.snowflake.com/en/user-guide/sample-data-tpch.html)
-- Default Snowflake warehouse named compute_wh (that the Snowflake Partner connect dbt role has access to)
+- Default Snowflake warehouse named compute_wh 
 
 ### Using the demo project
 
