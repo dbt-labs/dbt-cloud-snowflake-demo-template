@@ -17,3 +17,16 @@ models:
     columns:
       - name: order_year
         description: year of the order
+
+metrics:
+  - name: total_sales
+    label: Total Sales
+    model: ref('order_items')
+    description: "Total sales over time"
+    type: sum
+    sql: net_item_sales_amount
+    timestamp: order_date
+    time_grains: [day, week, month]
+
+    dimensions:
+      - return_flag
