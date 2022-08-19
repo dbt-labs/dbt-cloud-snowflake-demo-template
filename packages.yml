@@ -7,4 +7,5 @@ packages:
 # To learn more, check out the docs: https://hub.getdbt.com/dbt-labs/dbt_utils/latest/
   - package: dbt-labs/dbt_utils
     version: 0.8.6
-
+  - package: dbt-labs/metrics
+    version: 0.3.1
